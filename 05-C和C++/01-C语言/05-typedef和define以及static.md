@@ -219,5 +219,45 @@ int y = MAX(x++, 10); // 错误！
 
 如果有一些复杂的宏，可以使用`inline`函数，`inline`函数拥有函数的类型安全，同时也有可调试性。它会告诉编译器按照宏的方式进行代码内联，从而避免函数调用开销
 
+# 5. `#`和`##`
+
+
+# 6. 几个面试题
+
+> 写一个宏，计算结构体中某变量相对于首地址的偏移量，并给出说明
+
+```c
+#define OFFSET_OF(struct_type, member) (size_t)&(((struct_type *)0)->member)
+```
+
+解释一下上面的宏
+
+- `(struct_type*)0`  ： 将地址`0`强制转换为结构体指针
+- `->member`  访问该指针指向的结构体的`member`成员
+- `&(((struct_type *)0)->member)`  取该成员的地址，由于结构体首地址被假设为`0`，此时成员的地址就是相对于首地址的偏移
+- `size_t`  将地址值转为`size_t`类型，得到偏移量的数值
+
+
+```c
+#include <stdio.h>
+#include <stddef.h>
+
+struct Stu
+{
+    char name[20];
+    int age;
+    float score;
+};
+#define OFFSET_OF(struct_type, member) (size_t)&(((struct_type *)0)->member)
+
+int main(void)
+{ 
+    printf("name偏移量：%zu\n", OFFSET_OF(struct Stu, name));   // 输出 0
+    printf("age偏移量：%zu\n", OFFSET_OF(struct Stu, age));     // 输出 20
+    printf("score偏移量：%zu\n", OFFSET_OF(struct Stu, score)); // 输出 24
+    return 0;
+}
+
+```
 
 
