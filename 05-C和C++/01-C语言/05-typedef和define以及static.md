@@ -244,7 +244,7 @@ int y = MAX(x++, 10); // 错误！
 
 struct Stu
 {
-    char name[20];
+    char name[17];
     int age;
     float score;
 };
@@ -259,5 +259,16 @@ int main(void)
 }
 
 ```
+
+> [!danger]
+> 在C语言中的标准库中已经有`offsetof`这个宏了，实现的逻辑就是上面的逻辑
+> 使用`#include <stddef.h>`，然后直接使用即可
+> 还有一个问题？ 为啥上面的`age`相对于首地址是20呢？ 这个就涉及到`struct`的内存分配问题了，详细的请参考[[06-struct结构体和union共同体]]
+
+
+
+
+
+
 
 
