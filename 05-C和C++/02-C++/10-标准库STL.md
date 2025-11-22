@@ -291,6 +291,9 @@ s.erase(1);                        // 删除
 s.find(1);                         // 查找,返回迭代器
 s.count(1);                        // 计数(0或1)
 s.size();                          // 大小
+
+
+# 可以使用unsorted_set 这个采用的是hash表的方式
 ```
 
 # 6. map
@@ -319,7 +322,7 @@ for (auto& pair : m) {
 
 std::stack<int> stk;
 stk.push(1);                       // 入栈
-stk.pop();                         // 出栈
+stk.pop();                         // 出栈，不返回值
 stk.top();                         // 栈顶元素
 stk.empty();                       // 是否为空
 stk.size();                        // 大小
