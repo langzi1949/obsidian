@@ -181,7 +181,7 @@ note right: 最终存入 beanDefinitionMap
 3. 最终，会执行到`BeanDefinitionReaderUtils.registerBeanDefinition(bdHolder, getReaderContext().getRegistry());`
 4. 至此，loadBeanDefinition的流程完毕。
 
-✅✅追问一下，最终处理的*registry*这个对象实例是谁？ 是`DefaultListableBeanFactory`，所以一再强调，这个类非常重要。
+✅✅  追问一下，最终处理的*registry*这个对象实例是谁？ 是`DefaultListableBeanFactory`，所以一再强调，这个类非常重要。
 
 ```java title=DefaultListableBeanFactory.java
 public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition){}
