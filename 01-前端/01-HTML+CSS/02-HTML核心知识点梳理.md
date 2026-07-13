@@ -24,7 +24,7 @@
 	* 就是写在具体的html标签中，比如：`<h1 style="color: red; font-size:80px"></h1>`
 * 内部样式
 	* 推荐在`head`中写`<style>`标签，比如
-	```css
+```css
 <style>
 	button {
 		width: 200px;
