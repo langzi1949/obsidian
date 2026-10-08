@@ -42,7 +42,7 @@ F -> G
 虽然说上面的流程图中有7个过程，但是真正考察的是5个过程，即：加载 -> 验证 -> 准备 -> 解析 -> 初始化
 # 2. 内存空间区域以及相关的作用
 
-![[Pasted image 20260704160501.png|600]]
+![[Pasted image 20260704160501.png|459]]
 
 在JVM虚拟机规范中，运行时会有5大区域，分别是：**==Stack 、Heap、Method Area、Native Area、Program counter register==**
 针对上面的区域，我们需要了解一下其中各个区域的作用
